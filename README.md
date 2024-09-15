@@ -1,4 +1,4 @@
-# Approximaster Anarchy 2004 Webpage
+# Approximaster Webpage
 the Funniest Anarchy Server website
 
 # Ey, This Economy is broken, fix this up.
