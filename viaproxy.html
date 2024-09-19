@@ -67,6 +67,10 @@
             <label for="hostname">Hostname:</label>
             <input type="text" id="hostname" placeholder="Enter hostname (e.g., example.com)">
         </div>
+        <div class="form-group">
+            <label for="vport">Port:</label>
+            <input type="text" id="vport" placeholder="Enter port (e.g., 25568)">
+        </div>
         <button onclick="generateAddress()">Generate Address</button>
         <div class="result" id="result"></div>
     </div>
@@ -77,7 +81,8 @@
             const port = document.getElementById('port').value;
             const version = document.getElementById('version').value;
             const hostname = document.getElementById('hostname').value;
-            const result = `${address}_${port}_${version}.viaproxy.${hostname}.nip.io:${port}`;
+            const hostname = document.getElementById('vport').value;
+            const result = `${address}_${port}_${version}.viaproxy.${hostname}:${vport}`;
             document.getElementById('result').innerText = result;
         }
     </script>
