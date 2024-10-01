@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 93 Style Webpage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #008080;
+            color: #fff;
+        }
+        .window {
+            width: 300px;
+            height: 200px;
+            background-color: #c0c0c0;
+            border: 2px solid #000;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            padding: 10px;
+        }
+        .title-bar {
+            background-color: #000080;
+            color: #fff;
+            padding: 5px;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">My Window</div>
+        <div class="content">
+            <p>Welcome to Windows 93!</p>
+        </div>
+    </div>
+    <script>
+        // JavaScript to make the window draggable
+        const windowElement = document.querySelector('.window');
+        const titleBar = windowElement.querySelector('.title-bar');
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        titleBar.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - windowElement.offsetLeft;
+            offsetY = e.clientY - windowElement.offsetTop;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                windowElement.style.left = `${e.clientX - offsetX}px`;
+                windowElement.style.top = `${e.clientY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+    </script>
+</body>
+</html>
